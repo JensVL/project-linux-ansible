@@ -1,7 +1,7 @@
 # Enterprise Linux Lab Report
 
-- Student name: 
-- Github repo: <https://github.com/HoGentTIN/elnx-USER.git>
+- Student name: Jens Van Liefferinge
+- Github repo: <https://github.com/HoGentTIN/elnx-1920-sme-JensVL>
 
 Describe the goals of the current iteration/assignment in a short sentence.
 

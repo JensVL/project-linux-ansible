@@ -1,7 +1,7 @@
 # Cheat sheets and checklists
 
-- Student name: NAME
-- Github repo: URL
+- Student name: Jens Van Liefferinge
+- Github repo: https://github.com/HoGentTIN/elnx-1920-sme-JensVL
 
 ## Basic commands
 
