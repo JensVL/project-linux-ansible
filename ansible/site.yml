@@ -3,4 +3,5 @@
 
 - hosts: pu001
   become: true
-  roles: []
+  roles:
+    - bertvv.rh-base

@@ -1,7 +1,7 @@
 #! /usr/bin/env bats
 #
 # Acceptance test script for srv010
-admin_user=bert
+admin_user=jens
 
 @test "SELinux should be set to 'Enforcing'" {
   [ 'Enforcing' = $(getenforce) ]
@@ -62,6 +62,7 @@ admin_user=bert
 }
 
 @test "Custom /etc/motd should have been installed" {
+  skip
   [ -f /etc/motd ] # is a regular file
   [ -s /etc/motd ] # is nonempty
 }
