@@ -5,3 +5,6 @@
   become: true
   roles:
     - bertvv.rh-base
+    - bertvv.httpd
+    - bertvv.mariadb
+    - bertvv.wordpress

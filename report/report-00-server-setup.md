@@ -43,10 +43,6 @@ Applying basic configuration to the pu001 server and testing it.
     ```
 ## Procedure/Documentation
 
-Describe *in detail* how you completed the assignment, with main focus on the "manual" work. It is of course not necessary to copy/paste your code in this document, but you can refer to it with a hyperlink.
-
-Make sure to write clean Markdown code, so your report looks good and is clearly structured on Github.
-
 1. Downloaded the [bertvv Ansible base role](https://github.com/bertvv/ansible-role-rh-base) into /ansible/roles
 2. Added role into [site.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/site.yml)
 3. Edited IP in [vagrant-hosts.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/vagrant-hosts.yml) to `192.0.2.10`
@@ -100,7 +96,7 @@ Make sure to write clean Markdown code, so your report looks good and is clearly
     13 tests, 0 failures, 1 skipped
     ```
 
-    LAMP tests failed, but those are not part of this asignment.
+    LAMP tests failed, but those are not part of this assignment.
 
 4. Logged off from the server and used SSH to gain access to the VM from the host machine using `$ ssh jens@192.0.2.10`. No password was asked.
 

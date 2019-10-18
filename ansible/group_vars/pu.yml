@@ -1,0 +1,16 @@
+---
+httpd_ssl_certificate_key_file: ca.key
+httpd_ssl_certificate_file: ca.crt
+mariadb_bind_address: 0.0.0.0
+mariadb_databases:
+  - name: wp_db
+mariadb_root_password: root
+mariadb_users:
+  - name: jens
+    password: password
+    priv: 'wp_db.*:ALL'
+    host: '192.0.2.%'
+wordpress_database_host: 192.0.2.10
+wordpress_database: wp_db
+wordpress_user: jens
+wordpress_password: password

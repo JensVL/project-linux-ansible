@@ -10,10 +10,10 @@
 #}}}
 #{{{ Variables
 sut=192.0.2.10
-mariadb_root_password=fogMeHud8
+mariadb_root_password=root
 wordpress_database=wp_db
-wordpress_user=wp_user
-wordpress_password=CorkIgWac
+wordpress_user=jens
+wordpress_password=password
 #}}}
 
 # Test cases
