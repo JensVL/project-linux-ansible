@@ -8,3 +8,13 @@
     - bertvv.httpd
     - bertvv.mariadb
     - bertvv.wordpress
+- hosts: pr001
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind
+- hosts: pr002
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind

@@ -46,6 +46,8 @@ Installing & configuring a LAMP stack on pu001.
     ✓ The Wordpress install page should be visible under http://192.0.2.10/wordpress/
     ✓ MariaDB should not have a test database
     ✓ MariaDB should not have anonymous users
+
+    15 tests, 0 failures
     ```
 
 5. On the host sytem, browse to `192.0.2.10`
@@ -70,7 +72,7 @@ Installing & configuring a LAMP stack on pu001.
 11. Moved certificate to /ansible/files
 12. Added SSL variable configuration into [pu.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/pu.yml)
 13. `vagrant provision`
-14. `vagrant ssh 001`
+14. `vagrant ssh pu001`
 15. Ran tests using `sudo /vagrant/test/runbats.sh`
 16. Wordpress install page failed, others completed
 17. Browsed on host system to `192.0.2.10`
@@ -80,7 +82,7 @@ Installing & configuring a LAMP stack on pu001.
 21. Added `host: 192.0.2.%` into `mariadb_users`
 22. Browsed to `192.0.2.10/wordpress` on host system
 23. Wordpress install page shows
-24. `vagrant ssh 001`
+24. `vagrant ssh pu001`
 25. Ran tests using `sudo /vagrant/test/runbats.sh`
 
     Output:
