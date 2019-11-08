@@ -8,13 +8,16 @@
     - bertvv.httpd
     - bertvv.mariadb
     - bertvv.wordpress
+    - hwwilliams.fail2ban
 - hosts: pr001
   become: true
   roles:
     - bertvv.rh-base
     - bertvv.bind
+    - hwwilliams.fail2ban
 - hosts: pr002
   become: true
   roles:
     - bertvv.rh-base
     - bertvv.bind
+    - hwwilliams.fail2ban
