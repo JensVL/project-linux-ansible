@@ -12,7 +12,7 @@
 sut=192.0.2.10
 mariadb_root_password=root
 wordpress_database=wp_db
-wordpress_user=jens
+wordpress_user=user1
 wordpress_password=password
 #}}}
 

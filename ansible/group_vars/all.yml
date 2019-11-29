@@ -4,6 +4,9 @@
 rhbase_firewall_allow_services:
   - http
   - https
+rhbase_firewall_allow_ports:
+  - 53/tcp
+  - 53/udp
 rhbase_repositories:
   - epel-release
 rhbase_install_packages:
@@ -25,5 +28,5 @@ rhbase_ssh_user: jens
 fail2ban_modules: 
   - ssh
 fail2ban_config_maxretry: 5
-
+fail2ban_firewalld: true
 

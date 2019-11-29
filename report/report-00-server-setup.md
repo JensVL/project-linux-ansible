@@ -1,4 +1,5 @@
 # Enterprise Linux Lab Report: 00-server-setup
+
 - Student name: Jens Van Liefferinge
 - Github repo: <https://github.com/HoGentTIN/elnx-1920-sme-JensVL>
 
@@ -41,6 +42,7 @@ Applying basic configuration to the pu001 server and testing it.
     enp0s8     : 192.0.2.50        fe80::a00:27ff:fecd:aeed/64
     [bert@pu001 ~]$
     ```
+
 ## Procedure/Documentation
 
 1. Downloaded the [bertvv Ansible base role](https://github.com/bertvv/ansible-role-rh-base) into /ansible/roles
@@ -55,7 +57,7 @@ Applying basic configuration to the pu001 server and testing it.
 
     ```console
     PLAY RECAP *********************************************************************
-    pu001: 
+    pu001:
     ok = 28; changed = 1; unreachable = 0; failed = 0; skipped = 13; rescued = 0; ignored = 0
     ```
 
@@ -72,9 +74,9 @@ Applying basic configuration to the pu001 server and testing it.
 1. Executed `vagrant status` in the project repository
     - One VM `pu001` with status `not created`
 2. Executed `vagrant up pu001` without errors
-3. Logged in on the server with `vagrant ssh pu001` and ran the acceptance tests using `sudo /vagrant/test/runbats.sh`. 
+3. Logged in on the server with `vagrant ssh pu001` and ran the acceptance tests using `sudo /vagrant/test/runbats.sh`.
 
-    Output: 
+    Output:
 
     ```console
     [vagrant@pu001 ~]$ sudo /vagrant/test/runbats.sh
@@ -103,7 +105,9 @@ Applying basic configuration to the pu001 server and testing it.
 ## Resources
 
 ### Installing guest additions on CentOS
-https://unix.stackexchange.com/questions/18435/how-to-install-virtualbox-guest-additions-on-centos-via-command-line-only?fbclid=IwAR0Z1PVLgys_lJV7fpKvOrQY_JoYIwLVDOALNFBNe-XCT8L-9FZ8q-MTEBc
+
+<https://unix.stackexchange.com/questions/18435/how-to-install-virtualbox-guest-additions-on-centos-via-command-line-only?fbclid=IwAR0Z1PVLgys_lJV7fpKvOrQY_JoYIwLVDOALNFBNe-XCT8L-9FZ8q-MTEBc>
 
 ### bertvv Role Variables
-https://github.com/bertvv/ansible-role-rh-base
+
+<https://github.com/bertvv/ansible-role-rh-base>

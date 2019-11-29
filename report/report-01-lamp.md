@@ -1,4 +1,5 @@
 # Enterprise Linux Lab Report: 01-lamp
+
 - Student name: Jens Van Liefferinge
 - Github repo: <https://github.com/HoGentTIN/elnx-1920-sme-JensVL>
 
@@ -13,7 +14,7 @@ Installing & configuring a LAMP stack on pu001.
     - The command should run without errors (exit status 0)
 4. Log in on the server with `vagrant ssh pu001` and run the acceptance tests. They should succeed
 
-    ```console
+```console
     Running test /vagrant/test/common.bats
     ✓ SELinux should be set to 'Enforcing'
     ✓ Firewall should be enabled and running
@@ -48,14 +49,23 @@ Installing & configuring a LAMP stack on pu001.
     ✓ MariaDB should not have anonymous users
 
     15 tests, 0 failures
-    ```
+```
+
+Manual workaround for when the "MariaDB user should have write" test fails:
+
+- SSH into pu001 using `vagrant ssh pu001`
+- Run `mysql -u root -p` to log in as root user
+- Enter `root` as password
+- Eexecute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`
+- Exit out of the MariaDB shell using `exit`
+- Try to log in with the user: `mysql -u user1 -p`
+- Enter `password` as password
+- If successful, you should see the MariaDB prompt
 
 5. On the host sytem, browse to `192.0.2.10`
 6. An Apache welcome page should be visible
 7. On the host system, browse to `192.0.2.10/wordpress`
 8. A wordpress install page should be visible
-
-
 
 ## Procedure/Documentation
 
@@ -85,8 +95,7 @@ Installing & configuring a LAMP stack on pu001.
 24. `vagrant ssh pu001`
 25. Ran tests using `sudo /vagrant/test/runbats.sh`
 
-    Output:
-    ```console
+```console
     Running test /vagrant/test/common.bats
     ✓ SELinux should be set to 'Enforcing'
     ✓ Firewall should be enabled and running
@@ -121,17 +130,37 @@ Installing & configuring a LAMP stack on pu001.
     ✓ MariaDB should not have anonymous users
 
     15 tests, 0 failures
-    ```
-24. Finished test plan
-25. Wrote test report
+```
+
+26. Finished test plan
+27. Wrote test report
+
+### Update 22/11
+
+MariaDB user sometimes doesn't have write options by default anymore for some reason. Tried to fix:
+
+- using another [role](https://github.com/CarlosLongarela/ansible-role-mariadb)
+- double checking variables from the bertvv.mariadb role
+- adding `GRANT` permission into variable
+
+Manual workaround:
+
+- SSH into pu001 using `vagrant ssh pu001`
+- Run `mysql -u root -p` to log in as root user
+- Enter `root` as password
+- Eexecute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`
+- Exit out of the MariaDB shell using `exit`
+- Try to log in with the user: `mysql -u user1 -p`
+- Enter `password` as password
+- If successful, you should see the MariaDB prompt
 
 ## Test report
 
 1. Executed `vagrant status`
     - `pu001` with status `aborted`. Destroyed with `vagrant destroy -f pu001`
-3. Executed `vagrant up pu001`
+2. Executed `vagrant up pu001`
     - No errors
-4. Logged in on the server with `vagrant ssh pu001` and ran the acceptance tests. Output:
+3. Logged in on the server with `vagrant ssh pu001` and ran the acceptance tests. Output:
 
     ```console
     Running test /vagrant/test/common.bats
@@ -168,20 +197,34 @@ Installing & configuring a LAMP stack on pu001.
     ✓ MariaDB should not have anonymous users
     ```
 
-5. On the host sytem, browsed to `192.0.2.10`
-6. An Apache welcome page is shown
-7. On the host system, browsed to `192.0.2.10/wordpress`
-8. A wordpress install page is shown
+4. On the host sytem, browsed to `192.0.2.10`
+5. An Apache welcome page is shown
+6. On the host system, browsed to `192.0.2.10/wordpress`
+7. A wordpress install page is shown
 
 ## Resources
 
 ### Generating SSL key on CentOS
-- https://wiki.centos.org/HowTos/Https
+
+- <https://wiki.centos.org/HowTos/Https>
 
 ### bertvv Role Variables
-- https://github.com/bertvv/ansible-role-httpd
-- https://github.com/bertvv/ansible-role-mariadb
-- https://github.com/bertvv/ansible-role-wordpress
+
+- <https://github.com/bertvv/ansible-role-httpd>
+- <https://github.com/bertvv/ansible-role-mariadb>
+- <https://github.com/bertvv/ansible-role-wordpress>
 
 ### Ansible documentation
-- https://docs.ansible.com/ansible/latest/index.html
+
+- <https://docs.ansible.com/ansible/latest/index.html>
+
+### MariaDB User login errors
+
+- <https://stackoverflow.com/questions/10299148/mysql-error-1045-28000-access-denied-for-user-billlocalhost-using-passw>
+- <https://stackoverflow.com/questions/50932940/mariadb-either-not-allowing-host-to-connect-or-access-denied-for-user>
+- <https://mariadb.com/kb/en/library/access-denied-for-user-rootlocalhost/>
+- <https://stackoverflow.com/questions/28068155/access-denied-for-user-rootlocalhost-using-password-yes-after-new-instal>
+- <https://stackoverflow.com/questions/41645309/mysql-error-access-denied-for-user-rootlocalhost>
+- <https://mariadb.com/kb/en/library/error-logging-in/>
+- <https://serverfault.com/questions/620694/mysql-remote-connection-access-denied-for-user-usernamelocalhost-using-p>
+- <https://www.liquidweb.com/kb/troubleshooting-1044-1045-access-denied-user/>

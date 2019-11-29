@@ -4,9 +4,9 @@ bind_listen_ipv4:
   - 'any'
 bind_allow_query: 
   - 'any'
-bind_forwarders:
-  - '8.8.8.8'
-  - '8.8.4.4'
+#bind_forwarders:
+#  - '8.8.8.8'
+#  - '8.8.4.4'
 bind_zone_domains:
   - name: avalon.lan
     networks:
@@ -52,4 +52,4 @@ bind_zone_domains:
       aliases:
         - files
     - name: ws001
-    
+bind_zone_file_mode: "0777"
