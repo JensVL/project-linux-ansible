@@ -18,3 +18,5 @@ dns1:
   - pr001
 dns2:
   - pr002
+file:
+  - pr011

@@ -1,0 +1,85 @@
+---
+samba_workgroup: AVALON
+samba_shares_root: /srv/shares
+samba_netbios_name: FILES
+samba_load_printers: false
+samba_users:
+  - name: stevenh
+    password: stevenh
+  - name: stevenv
+    password: stevenv
+  - name: leend
+    password: leend
+  - name: svena
+    password: svena
+  - name: nehirb
+    password: nehirb
+  - name: alexanderd
+    password: alexanderd
+  - name: krisv
+    password: krisv
+  - name: benoitp
+    password: benoitp
+  - name: anc
+    password: anc
+  - name: elenaa
+    password: elenaa
+  - name: evyt
+    password: evyt
+  - name: christophev
+    password: christophev
+  - name: stefaanv
+    password: stefaanv
+  - name: jens
+    password: jens
+  
+samba_shares:
+  - name: management
+    group: management
+    valid_users: +management
+    write_list: +management
+    browsable: yes
+  - name: technical
+    group: technical
+    valid_users: +technical,+management,+it,+sales
+    write_list: +technical
+    browsable: yes
+  - name: sales
+    group: sales
+    valid_users: +sales,+management
+    write_list: +sales
+    browsable: yes
+  - name: it
+    group: it
+    valid_users: +it,+management
+    write_list: +it
+    browsable: yes
+  - name: public
+    group: public
+    valid_users: +public,+management,+it,+sales,+technical
+    write_list: +public,+management,+it,+sales,+technical
+
+vsftpd_anonymous_enable: false
+vsftpd_local_enable: true
+
+vsftpd_extra_permissions:
+  - folder: "/srv/shares/management"
+    entity: "management"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/sales"
+    entity: "sales"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/it"
+    entity: "it"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/technical"
+    entity: "technical"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/public"
+    entity: "public"
+    etype: "group"
+    permissions: "r-x"

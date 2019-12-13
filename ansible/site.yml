@@ -21,3 +21,10 @@
     - bertvv.rh-base
     - bertvv.bind
     - hwwilliams.fail2ban
+- hosts: pr011
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.samba
+    - bertvv.vsftpd
+  #  - hwwilliams.fail2ban
