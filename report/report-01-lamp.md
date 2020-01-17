@@ -137,22 +137,25 @@ Manual workaround for when the "MariaDB user should have write" test fails:
 
 ### Update 22/11
 
-MariaDB user sometimes doesn't have write options by default anymore for some reason. Tried to fix:
+MariaDB user sometimes doesn't have write options by default anymore for some reason. The test results will say so too. Tried to fix:
 
 - using another [role](https://github.com/CarlosLongarela/ansible-role-mariadb)
 - double checking variables from the bertvv.mariadb role
 - adding `GRANT` permission into variable
 
-Manual workaround:
+without success.
+
+**Manual workaround:**
 
 - SSH into pu001 using `vagrant ssh pu001`
 - Run `mysql -u root -p` to log in as root user
 - Enter `root` as password
-- Eexecute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`
+- Execute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`
 - Exit out of the MariaDB shell using `exit`
 - Try to log in with the user: `mysql -u user1 -p`
 - Enter `password` as password
 - If successful, you should see the MariaDB prompt
+- The test will now succeed
 
 ## Test report
 

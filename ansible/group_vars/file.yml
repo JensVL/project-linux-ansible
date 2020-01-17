@@ -61,6 +61,8 @@ samba_shares:
 
 vsftpd_anonymous_enable: false
 vsftpd_local_enable: true
+vsftpd_write_enable: true
+vsftpd_local_umask: 002
 
 vsftpd_extra_permissions:
   - folder: "/srv/shares/management"
@@ -82,4 +84,24 @@ vsftpd_extra_permissions:
   - folder: "/srv/shares/public"
     entity: "public"
     etype: "group"
-    permissions: "r-x"
+    permissions: "rwx"
+  - folder: "/srv/shares/technical"
+    entity: "it"
+    etype: "group"
+    permissions: "r--"
+  - folder: "/srv/shares/technical"
+    entity: "management"
+    etype: "group"
+    permissions: "r--"
+  - folder: "/srv/shares/technical"
+    entity: "sales"
+    etype: "group"
+    permissions: "r--"
+  - folder: "/srv/shares/it"
+    entity: "management"
+    etype: "group"
+    permissions: "r--"
+  - folder: "/srv/shares/sales"
+    entity: "management"
+    etype: "group"
+    permissions: "r--"

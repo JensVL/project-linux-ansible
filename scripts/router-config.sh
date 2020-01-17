@@ -16,25 +16,46 @@ set system host-name 'router'
 # IP settings
 #
 
-# TODO
+set interfaces ethernet eth0 address dhcp
+set interfaces ethernet eth0 description WAN
+set interfaces ethernet eth1 address 192.0.2.254/24
+set interfaces ethernet eth1 description DMZ
+set interfaces ethernet eth2 address 172.16.255.254/16
+set interfaces ethernet eth2 description internal
+
+set system gateway-address 10.0.2.15
 
 #
 # Network Address Translation
 #
 
-# TODO
+set nat source rule 100 outbound-interface 'eth0'
+set nat source rule 100 source address '192.0.2.0/24'
+set nat source rule 100 translation address masquerade
+
+set nat source rule 200 outbound-interface 'eth0'
+set nat source rule 200 source address '172.16.0.0/16'
+set nat source rule 200 translation address masquerade
+
+set nat source rule 300 outbound-interface 'eth1'
+set nat source rule 300 source address '172.16.0.0/16'
+set nat source rule 300 translation address masquerade
 
 #
 # Time
 #
 
-#
+set system time-zone Etc/GMT+1
+set system ntp server 'be.pool.ntp.org'
 
 #
 # Domain Name Service
 #
 
-# TODO
+set service dns forwarding domain avalon.lan server 172.16.192.1
+set service dns forwarding name-server 10.0.2.15
+set service dns forwarding listen-on 'eth1'
+set service dns forwarding listen-on 'eth2'
 
 # Make configuration changes persistent
 commit

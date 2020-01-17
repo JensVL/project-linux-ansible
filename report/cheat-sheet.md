@@ -26,4 +26,3 @@ Simple workflow for a personal project without other contributors:
 1. Is the IP-adress correct? `ip a`
 2. Is the router/default gateway correct? `ip r -n`
 3. Is a DNS-server available? `cat /etc/resolv.conf`
-

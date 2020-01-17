@@ -93,11 +93,13 @@ rhbase_users:
     groups:
     - users
     - technical
+    - public
   - name: elenaa
     password: $1$mGXWAS4F$YzlCz8iFDnkDNZzLJZDkS.
     groups:
     - users
     - management
+    - public
   - name: evyt
     password: $1$07bnviF5$8NHHBm3fBjCbctsU40NjE/
     groups:
