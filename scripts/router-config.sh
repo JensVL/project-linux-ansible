@@ -16,6 +16,8 @@ set system host-name 'router'
 # IP settings
 #
 
+set service dhcp
+
 set interfaces ethernet eth0 address dhcp
 set interfaces ethernet eth0 description WAN
 set interfaces ethernet eth1 address 192.0.2.254/24
@@ -24,6 +26,19 @@ set interfaces ethernet eth2 address 172.16.255.254/16
 set interfaces ethernet eth2 description internal
 
 set system gateway-address 10.0.2.15
+
+set service dhcp-server shared-network-name avalon authoritative enable
+set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 default-router 172.16.0.1
+set service dhcp‐server shared‐network‐name avalon subnet 172.16.0.0/16 static‐mapping mac‐address ff:ff:ff:ff:ff:ff
+set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 static-mapping ip-address <address>
+
+set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 lease 14400
+set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 start 172.16.128.1 stop 172.16.191.254
+
+
+set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 lease 43200
+set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 start 172.16.0.2 stop 172.16.127.254
+
 
 #
 # Network Address Translation

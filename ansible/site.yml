@@ -27,4 +27,6 @@
     - bertvv.rh-base
     - bertvv.samba
     - bertvv.vsftpd
+  #  - weareinteractive.vsftpd
+  #  - weareinteractive.openssl
   #  - hwwilliams.fail2ban

@@ -9,6 +9,8 @@ rhbase_firewall_allow_services:
 rhbase_firewall_allow_ports:
   - 53/tcp
   - 53/udp
+  - 20/tcp
+  - 21/tcp
 rhbase_repositories:
   - epel-release
 rhbase_install_packages:

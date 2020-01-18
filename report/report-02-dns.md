@@ -92,7 +92,7 @@ Running test /vagrant/test/pr002/slavedns.bats
 
 ## Procedure/Documentation
 
-1. Downloaded the [bertvv bind](https://github.com/bertvv/ansible-role-bind) into /ansible/roles
+1. Downloaded the [bertvv bind role](https://github.com/bertvv/ansible-role-bind) into /ansible/roles
 2. Added roles into [site.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/site.yml)
 3. Added `dns1` group into `group_vars`
 4. Added primary dns configuration variables into [dns1.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/dns1.yml)

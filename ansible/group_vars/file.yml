@@ -105,3 +105,57 @@ vsftpd_extra_permissions:
     entity: "management"
     etype: "group"
     permissions: "r--"
+
+# vsftpd_enable_ssl: false
+# vsftpd_package: vsftpd
+# vsftpd_service_enabled: yes
+# vsftpd_service_state: started
+# vsftpd_users:
+#   - username: jens
+#     name: jens
+#     password: "{{ 'jens' | password_hash('sha256', 'salt') }}"
+#   - username: stevenh
+#     name: stevenh
+#     password: "{{ 'stevenh' | password_hash('sha256', 'salt') }}"
+#   - username: stevenv
+#     name: stevenv
+#     password: "{{ 'stevenv' | password_hash('sha256', 'salt') }}"
+#   - username: leend
+#     name: leend
+#     password: "{{ 'leend' | password_hash('sha256', 'salt') }}"
+#   - username: svena
+#     name: svena
+#     password: "{{ 'svena' | password_hash('sha256', 'salt') }}"
+#   - username: nehirb
+#     name: nehirb
+#     password: "{{ 'nehirb' | password_hash('sha256', 'salt') }}"
+#   - username: alexanderd
+#     name: alexanderd
+#     password: "{{ 'alexanderd' | password_hash('sha256', 'salt') }}"
+#   - username: krisv
+#     name: krisv
+#     password: "{{ 'krisv' | password_hash('sha256', 'salt') }}"
+#   - username: benoitp
+#     name: benoitp
+#     password: "{{ 'benoitp' | password_hash('sha256', 'salt') }}"
+#   - username: anc
+#     name: anc
+#     password: "{{ 'anc' | password_hash('sha256', 'salt') }}"
+#   - username: elenaa
+#     name: elenaa
+#     password: "{{ 'elenaa' | password_hash('sha256', 'salt') }}"
+#   - username: evyt
+#     name: evyt
+#     password: "{{ 'evyt' | password_hash('sha256', 'salt') }}"
+#   - username: christophev
+#     name: christophev
+#     password: "{{ 'christophev' | password_hash('sha256', 'salt') }}"
+#   - username: stefaanv
+#     name: stefaanv
+#     password: "{{ 'stefaanv' | password_hash('sha256', 'salt') }}"
+# vsftpd_config:
+#   local_enable: YES
+#   write_enable: YES
+#   chroot_local_user: YES
+#   allow_writeable_chroot: YES
+#   local_umask: 022
