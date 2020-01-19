@@ -35,10 +35,8 @@ set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 static-m
 set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 lease 14400
 set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 start 172.16.128.1 stop 172.16.191.254
 
-
 set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 lease 43200
 set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 start 172.16.0.2 stop 172.16.127.254
-
 
 #
 # Network Address Translation

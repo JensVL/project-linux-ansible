@@ -36,28 +36,33 @@ samba_users:
 samba_shares:
   - name: management
     group: management
-    valid_users: +management
+    #valid_users: +management
     write_list: +management
     browsable: yes
+    directory_mode: 0770
   - name: technical
     group: technical
     valid_users: +technical,+management,+it,+sales
     write_list: +technical
     browsable: yes
+    #directory_mode: 0775
   - name: sales
     group: sales
     valid_users: +sales,+management
     write_list: +sales
     browsable: yes
+    #directory_mode: 0775
   - name: it
     group: it
     valid_users: +it,+management
     write_list: +it
     browsable: yes
+    #directory_mode: 0775
   - name: public
     group: public
     valid_users: +public,+management,+it,+sales,+technical
     write_list: +public,+management,+it,+sales,+technical
+    #directory_mode: 0777
 
 vsftpd_anonymous_enable: false
 vsftpd_local_enable: true

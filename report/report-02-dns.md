@@ -11,7 +11,7 @@ Setting up a master and slave DNS server for the `avalon.lan` domain.
 2. Execute `vagrant status`.
 3. The VMs with the names `pr001` and `pr002` should not exist. If the VMs do exist, destroy them first with `vagrant destroy -f pr001` and `vagrant destroy -f pr002`.
 4. Execute `vagrant up pr001 pr002` to launch both DNS servers.
-    - The command should run without errors (exit status 0)
+    - The command should run without errors (exit status 0).
 5. Log in on the master DNS server with `vagrant ssh pr001` and run the acceptance tests using `sudo /vagrant/test/runbats.sh`. They should succeed:
 
 ```console

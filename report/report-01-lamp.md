@@ -7,12 +7,12 @@ Installing & configuring a LAMP stack on pu001.
 
 ## Test plan
 
-1. On the host system, go to the local working directory of the project repository
-2. Execute `vagrant status`
-    - There should be one VM, `pu001` with status `not created`. If the VM does exist, destroy it first with `vagrant destroy -f pu001`
-3. Execute `vagrant up pu001`
-    - The command should run without errors (exit status 0)
-4. Log in on the server with `vagrant ssh pu001` and run the acceptance tests. They should succeed
+1. On the host system, go to the local working directory of the project repository.
+2. Execute `vagrant status`.
+    - There should be one VM, `pu001` with status `not created`. If the VM does exist, destroy it first with `vagrant destroy -f pu001`.
+3. Execute `vagrant up pu001`.
+    - The command should run without errors (exit status 0).
+4. Log in on the server with `vagrant ssh pu001` and run the acceptance tests. They should succeed:
 
 ```console
     Running test /vagrant/test/common.bats
@@ -53,19 +53,19 @@ Installing & configuring a LAMP stack on pu001.
 
 Manual workaround for when the "MariaDB user should have write" test fails:
 
-- SSH into pu001 using `vagrant ssh pu001`
-- Run `mysql -u root -p` to log in as root user
-- Enter `root` as password
-- Eexecute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`
-- Exit out of the MariaDB shell using `exit`
-- Try to log in with the user: `mysql -u user1 -p`
-- Enter `password` as password
-- If successful, you should see the MariaDB prompt
+- SSH into pu001 using `vagrant ssh pu001`.
+- Run `mysql -u root -p` to log in as root user.
+- Enter `root` as password.
+- Eexecute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`.
+- Exit out of the MariaDB shell using `exit`.
+- Try to log in with the user: `mysql -u user1 -p`.
+- Enter `password` as password.
+- If successful, you should see the MariaDB prompt.
 
-5. On the host sytem, browse to `192.0.2.10`
-6. An Apache welcome page should be visible
-7. On the host system, browse to `192.0.2.10/wordpress`
-8. A wordpress install page should be visible
+5. On the host sytem, browse to `192.0.2.10`.
+6. An Apache welcome page should be visible.
+7. On the host system, browse to `192.0.2.10/wordpress`.
+8. A wordpress install page should be visible.
 
 ## Procedure/Documentation
 
@@ -147,22 +147,22 @@ without success.
 
 **Manual workaround:**
 
-- SSH into pu001 using `vagrant ssh pu001`
-- Run `mysql -u root -p` to log in as root user
-- Enter `root` as password
-- Execute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`
-- Exit out of the MariaDB shell using `exit`
-- Try to log in with the user: `mysql -u user1 -p`
-- Enter `password` as password
-- If successful, you should see the MariaDB prompt
-- The test will now succeed
+- SSH into pu001 using `vagrant ssh pu001`.
+- Run `mysql -u root -p` to log in as root user.
+- Enter `root` as password.
+- Execute `grant all privileges on *.* to user1@localhost identified by 'password' with grant option;`.
+- Exit out of the MariaDB shell using `exit`.
+- Try to log in with the user: `mysql -u user1 -p`.
+- Enter `password` as password.
+- If successful, you should see the MariaDB prompt.
+- The test will now succeed.
 
 ## Test report
 
-1. Executed `vagrant status`
-    - `pu001` with status `aborted`. Destroyed with `vagrant destroy -f pu001`
-2. Executed `vagrant up pu001`
-    - No errors
+1. Executed `vagrant status`.
+    - `pu001` with status `aborted`. Destroyed with `vagrant destroy -f pu001`.
+2. Executed `vagrant up pu001`.
+    - No errors.
 3. Logged in on the server with `vagrant ssh pu001` and ran the acceptance tests. Output:
 
     ```console
@@ -200,10 +200,10 @@ without success.
     ✓ MariaDB should not have anonymous users
     ```
 
-4. On the host sytem, browsed to `192.0.2.10`
-5. An Apache welcome page is shown
-6. On the host system, browsed to `192.0.2.10/wordpress`
-7. A wordpress install page is shown
+4. On the host sytem, browsed to `192.0.2.10`.
+5. An Apache welcome page is shown.
+6. On the host system, browsed to `192.0.2.10/wordpress`.
+7. A wordpress install page is shown.
 
 ## Resources
 

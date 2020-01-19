@@ -7,12 +7,12 @@ Applying basic configuration to the pu001 server and testing it.
 
 ## Test plan
 
-1. On the host system, go to the local working directory of the project repository
-2. Execute `vagrant status`
-    - There should be one VM, `pu001` with status `not created`. If the VM does exist, destroy it first with `vagrant destroy -f pu001`
-3. Execute `vagrant up pu001`
-    - The command should run without errors (exit status 0)
-4. Log in on the server with `vagrant ssh pu001` and run the acceptance tests. They should succeed
+1. On the host system, go to the local working directory of the project repository.
+2. Execute `vagrant status`.
+    - There should be one VM, `pu001` with status `not created`. If the VM does exist, destroy it first with `vagrant destroy -f pu001`.
+3. Execute `vagrant up pu001`.
+    - The command should run without errors (exit status 0).
+4. Log in on the server with `vagrant ssh pu001` and run the acceptance tests. They should succeed:
 
     ```console
     [vagrant@pu001 test]$ sudo /vagrant/test/runbats.sh
@@ -36,11 +36,11 @@ Applying basic configuration to the pu001 server and testing it.
 5. Log off from the server and ssh to the VM as described below. You should **not** get a password prompt.
 
     ```console
-    $ ssh bert@192.0.2.50
+    $ ssh jens@192.0.2.10
     Welcome to pu001.localdomain.
     enp0s3     : 10.0.2.15         fe80::a00:27ff:fe5c:6428/64
-    enp0s8     : 192.0.2.50        fe80::a00:27ff:fecd:aeed/64
-    [bert@pu001 ~]$
+    enp0s8     : 192.0.2.10        fe80::a00:27ff:fecd:aeed/64
+    [jens@pu001 ~]$
     ```
 
 ## Procedure/Documentation
@@ -71,9 +71,9 @@ Applying basic configuration to the pu001 server and testing it.
 
 ## Test report
 
-1. Executed `vagrant status` in the project repository
-    - One VM `pu001` with status `not created`
-2. Executed `vagrant up pu001` without errors
+1. Executed `vagrant status` in the project repository.
+    - One VM `pu001` with status `not created`.
+2. Executed `vagrant up pu001` without errors.
 3. Logged in on the server with `vagrant ssh pu001` and ran the acceptance tests using `sudo /vagrant/test/runbats.sh`.
 
     Output:

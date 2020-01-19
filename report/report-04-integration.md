@@ -63,6 +63,12 @@ set service dhcp
 set service dhcp-server shared-network-name avalon authoritative enable
 ```
 
+8. Added DHCP config into [router config](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/scripts/router-config.sh)
+
+```shell
+
+```
+
 ## Test report
 
 ## Resources

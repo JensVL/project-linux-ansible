@@ -96,18 +96,21 @@ rhbase_users:
     - users
     - technical
     - public
+    shell: /sbin/nologin
   - name: elenaa
     password: $1$mGXWAS4F$YzlCz8iFDnkDNZzLJZDkS.
     groups:
     - users
     - management
     - public
+    shell: /sbin/nologin
   - name: evyt
     password: $1$07bnviF5$8NHHBm3fBjCbctsU40NjE/
     groups:
     - users
     - technical
     - public
+    shell: /sbin/nologin
   - name: christophev
     password: $1$fS0X1/pW$2NEFEsIhOiCiz0rBsFueP1
     groups:
@@ -127,4 +130,8 @@ fail2ban_modules:
   - ssh
 fail2ban_config_maxretry: 5
 fail2ban_firewalld: true
-
+fail2ban_jails:
+  - name: sshd
+    enabled: true
+    bantime: 600
+    maxretry: 5
