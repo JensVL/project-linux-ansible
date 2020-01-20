@@ -126,7 +126,7 @@ Running test /vagrant/test/pr011/vsftp.bats
 16. Access should be denied.
 17. Verify the created user groups by executing `vim /etc/group` and scrolling to the bottom of the list to verify the created groups have the correct users.
 18. Return to the vagrant account using `su vagrant` and `vagrant` as password.
-19. Open a new terminal window.
+19. Open a new terminal window on the host system.
 20. Try to ssh using `ssh nehirb@172.16.192.11`.
 21. Enter a wrong password 3 times. The correct password is `nehirb`.
 22. Execute `ssh nehirb@172.16.192.11` again.
@@ -545,8 +545,73 @@ public:x:1005:jens,stevenh,stevenv,leend,svena,nehirb,alexanderd,krisv,benoitp,a
 
 34. Verified fail2ban is working by executing `ssh nehirb@172.16.192.11` and entering a wrong password 5 times
 35. Checked ip table of fail2ban using a logged in admin user and executing `sudo iptables -L f2b-sshd`
-36. Wrote test plan
-37. Wrote test report
+36. Commented shell access lines
+37. Tried to FTP:
+
+```console
+curl "ftp://172.16.192.11/srv/shares/public/" --user vagrant:vagrant
+curl: (9) Server denied you to change to the given directory
+```
+
+38. Ran tests:
+
+```console
+Running test /vagrant/test/pr011/vsftp.bats
+ ✓ VSFTPD service should be running
+ ✓ VSFTPD service should be enabled at boot
+ ✓ The ’curl’ command should be installed
+ ✓ The SELinux status should be ‘enforcing’
+ ✓ FTP traffic should pass through the firewall
+ ✓ VSFTPD configuration should be syntactically correct
+ ✓ Anonymous user should not be able to see shares
+ ✗ read access for share ‘public’
+   (from function `assert_read_access' in file /vagrant/test/pr011/vsftp.bats, line 37,
+    in test file /vagrant/test/pr011/vsftp.bats, line 135)
+     `assert_read_access     public     alexanderd    alexanderd' failed with status 9
+ ✗ write access for share ‘public’
+   (from function `assert_write_access' in file /vagrant/test/pr011/vsftp.bats, line 61,
+    in test file /vagrant/test/pr011/vsftp.bats, line 153)
+     `assert_write_access    public     alexanderd    alexanderd' failed with status 9
+ ✗ read access for share ‘management’
+   (from function `assert_read_access' in file /vagrant/test/pr011/vsftp.bats, line 37,
+    in test file /vagrant/test/pr011/vsftp.bats, line 175)
+     `assert_read_access     management elenaa        elenaa' failed with status 9
+ ✗ write access for share ‘management’
+   (from function `assert_write_access' in file /vagrant/test/pr011/vsftp.bats, line 61,
+    in test file /vagrant/test/pr011/vsftp.bats, line 193)
+     `assert_write_access    management elenaa        elenaa' failed with status 9
+ ✗ read access for share ‘technical’
+   (from function `assert_read_access' in file /vagrant/test/pr011/vsftp.bats, line 37,
+    in test file /vagrant/test/pr011/vsftp.bats, line 207)
+     `assert_read_access     technical  alexanderd    alexanderd' failed with status 9
+ ✗ write access for share ‘technical’
+   (from function `assert_write_access' in file /vagrant/test/pr011/vsftp.bats, line 61,
+    in test file /vagrant/test/pr011/vsftp.bats, line 225)
+     `assert_write_access    technical  alexanderd    alexanderd' failed with status 9
+ ✗ read access for share ‘sales’
+   (from function `assert_read_access' in file /vagrant/test/pr011/vsftp.bats, line 37,
+    in test file /vagrant/test/pr011/vsftp.bats, line 245)
+     `assert_read_access     sales      benoitp       benoitp' failed with status 9
+ ✗ write access for share ‘sales’
+   (from function `assert_write_access' in file /vagrant/test/pr011/vsftp.bats, line 61,
+    in test file /vagrant/test/pr011/vsftp.bats, line 263)
+     `assert_write_access    sales      benoitp       benoitp' failed with status 9
+ ✗ read access for share ‘it’
+   (from function `assert_read_access' in file /vagrant/test/pr011/vsftp.bats, line 37,
+    in test file /vagrant/test/pr011/vsftp.bats, line 282)
+     `assert_read_access     it         christophev   christophev' failed with status 9
+ ✗ write access for share ‘it’
+   (from function `assert_write_access' in file /vagrant/test/pr011/vsftp.bats, line 61,
+    in test file /vagrant/test/pr011/vsftp.bats, line 300)
+     `assert_write_access    it         christophev   christophev' failed with status 9
+
+17 tests, 10 failures
+```
+
+39. Double checked vsftpd configuration
+40. Check share permissions
+41. Wrote test plan
+42. Wrote test report
 
 ## Test report
 
@@ -698,6 +763,10 @@ RETURN     all  --  anywhere             anywhere
 - <https://support.rackspace.com/how-to/installing-and-configuring-vsftpd/>
 - <https://github.com/weareinteractive/ansible-vsftpd>
 - <https://github.com/weareinteractive/ansible-openssl>
+- <https://unix.stackexchange.com/questions/289799/selinux-blocking-vsftpd-directory-listing>
+- <https://technicalsanctuary.wordpress.com/2012/11/01/curl-curl-9-server-denied-you-to-change-to-the-given-directory/>
+- <http://manastri.blogspot.com/2016/04/curl-curl-9-server-denied-you-to-change.html>
+- <https://www.linuxquestions.org/questions/linux-security-4/getting-url-error-9-server-denied-you-to-change-to-the-given-directory-for-yum-4175544052/>
 
 ### Fail2ban
 

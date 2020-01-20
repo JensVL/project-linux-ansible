@@ -62,9 +62,9 @@ Manual workaround for when the "MariaDB user should have write" test fails:
 - Enter `password` as password.
 - If successful, you should see the MariaDB prompt.
 
-5. On the host sytem, browse to `192.0.2.10`.
+5. On the host sytem, browse to `https://192.0.2.10`.
 6. An Apache welcome page should be visible.
-7. On the host system, browse to `192.0.2.10/wordpress`.
+7. On the host system, browse to `htps://192.0.2.10/wordpress`.
 8. A wordpress install page should be visible.
 
 ## Procedure/Documentation

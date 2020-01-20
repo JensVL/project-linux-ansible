@@ -36,7 +36,7 @@ samba_users:
 samba_shares:
   - name: management
     group: management
-    #valid_users: +management
+    valid_users: +management
     write_list: +management
     browsable: yes
     directory_mode: 0770

@@ -41,14 +41,14 @@ rhbase_users:
     - users
     - management
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: stevenv
     password: $1$.1NyIagU$ivY9wB2QNx.I2XTIudCVH1
     groups:
     - users
     - technical
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: leend
     password: $1$rEEN6./G$K3oTf.2Aqz1Tvga9sGlO2.
     groups:
@@ -62,7 +62,7 @@ rhbase_users:
     - users
     - sales
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: nehirb
     password: $1$D7PG4jet$bqVAKnYZepjx48VIJ1e3r.
     groups:
@@ -75,42 +75,42 @@ rhbase_users:
     - users
     - technical
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: krisv
     password: $1$c0nRmFIg$/Z4Y6KkxFlNvcHsXepNHt0
     groups:
     - users
     - management
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: benoitp
     password: $1$Ip271atj$OSTnBI6dVzYp45P75cVve.
     groups:
     - users
     - sales
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: anc
     password: $1$wYMUAqQy$UKrCCIPJAsvC.VMhKmPvg0
     groups:
     - users
     - technical
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: elenaa
     password: $1$mGXWAS4F$YzlCz8iFDnkDNZzLJZDkS.
     groups:
     - users
     - management
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: evyt
     password: $1$07bnviF5$8NHHBm3fBjCbctsU40NjE/
     groups:
     - users
     - technical
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
   - name: christophev
     password: $1$fS0X1/pW$2NEFEsIhOiCiz0rBsFueP1
     groups:
@@ -123,7 +123,7 @@ rhbase_users:
     - users
     - technical
     - public
-    shell: /sbin/nologin
+    #shell: /sbin/nologin
 rhbase_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDniuyEWUV6sV2RmWi8u0SglWu+KBs4vJXMklS+RkUT1PqR7c9Nh7Qvt8PKnFgHq45WACu2DTBXnVvQ+vFodoHPYvo9slHbCec+PCE8YLgRwiWUCmelgWga2Ny23mdV6BYxedCZ+9f3j6jIDGpEos0W5EiIqP9XfJsgQrDe3b08JZJo7D9ll+WAGLfakpL29EC37wP7xX+Hafo3Xhjq4ch6h0tDNvA7CSiXgzRYhReaaQH4Od3SJhFH5XRKYiGZQNYJ8yg8ZluzDTjDyx9GaSjzxqQ8ZokIc8juKkhC4nzc6cXxGUC6Cfc93dNq1MdmLcOGnMfsUdF9e/YxGga/xSGYc3BVHEV3g82kxLK9woFzPnl5dfk01XrhjqJttwmb7Yg2OZhT4z1LCigWPtWSc2EajU8S3FE7iKkza8/PzSRqPGYsxMzdkwW53j7LYPnZxLCMQYvx8SfdVZh28oqEOxZnf+Azz8e6ZVkKPDnN8rTmyPxtxYeRAFXwHT9m28CK1TUiCm/wDj++CiaeC1AkKdL7guIm2IFWtKNlvKVqX9HZ8vVVRi82Cdx4TNHiFDdIrHW/6l5Y6VcSiWf+noCfMnG9xcZ7EbeeED7P+uHpOgpIPUa+x624WeFzwsLj5su+NATjUpa2YePGpe+PbSVS4A0EexFCoBVvmfPxhGWqFqTZxw== jens.vanliefferinge.y4556@student.hogent.be
 rhbase_ssh_user: jens
 fail2ban_modules: 
