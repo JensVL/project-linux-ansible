@@ -1,7 +1,7 @@
 # Enterprise Linux Lab Report
 
 - Student name: Jens Van Liefferinge
-- Github repo: <https://github.com/HoGentTIN/elnx-1920-sme-JensVL>
+- Github repo: <https://github.com/JensVL/project-linux-ansible/tree/solution>
 
 Setting up a master and slave DNS server for the `avalon.lan` domain.
 
@@ -93,9 +93,9 @@ Running test /vagrant/test/pr002/slavedns.bats
 ## Procedure/Documentation
 
 1. Downloaded the [bertvv bind role](https://github.com/bertvv/ansible-role-bind) into /ansible/roles
-2. Added roles into [site.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/site.yml)
+2. Added roles into [site.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/site.yml)
 3. Added `dns1` group into `group_vars`
-4. Added primary dns configuration variables into [dns1.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/dns1.yml)
+4. Added primary dns configuration variables into [dns1.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/dns1.yml)
 5. Launched `pr001`
 6. Ran the acceptance tests:
 
@@ -135,7 +135,7 @@ Running test /vagrant/test/pr001/masterdns.bats
 ```
 
 7. Added `dns2` group into `group_vars`
-8. Added slave dns configuration variables into [dns2.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/dns2.yml)
+8. Added slave dns configuration variables into [dns2.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/dns2.yml)
 9. Launched `pr002`
 10. Ran the acceptance tests:
 
@@ -206,7 +206,7 @@ Running test /vagrant/test/pr002/slavedns.bats
 15. Added `bind_forwarders` into slave configuration
 16. Tests still failing
 17. Added [Fail2Ban](https://github.com/hwwilliams/ansible-role-fail2ban) role
-18. Configured Fail2ban in [all.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/all.yml)
+18. Configured Fail2ban in [all.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/all.yml)
 19. Added Fail2Ban role to every server
 20. Commented Fail2ban because it takes a long time to provision
 21. Ran testing environment from [test branch](https://github.com/bertvv/ansible-role-bind/tree/vagrant-tests) to check config

@@ -1,7 +1,7 @@
 # Enterprise Linux Lab Report
 
 - Student name: Jens Van Liefferinge
-- Github repo: <https://github.com/HoGentTIN/elnx-1920-sme-JensVL>
+- Github repo: <https://github.com/JensVL/project-linux-ansible/tree/solution>
 
 Setting up a Samba & vsftpd fileserver with user account imports & permissions.
 
@@ -139,18 +139,18 @@ Running test /vagrant/test/pr011/vsftp.bats
 
 1. Downloaded the [bertvv samba role](<https://github.com/bertvv/ansible-role-samba>) into /ansible/roles
 2. Downloaded the [bertvv vsftpd role](<https://github.com/bertvv/ansible-role-vsftpd>) into /ansible/roles
-3. Added roles into [site.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/site.yml)
+3. Added roles into [site.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/site.yml)
 4. Added `file` group into `group_vars`
-5. Added samba configuration variables into [file.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/file.yml) with users from [csv file](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/assignment/avalon-employees.csv)
+5. Added samba configuration variables into [file.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/file.yml) with users from [csv file](https://github.com/JensVL/project-linux-ansible/tree/solution/assignment/avalon-employees.csv)
 6. Launched `pr011`
 7. Ran tests: most failed
-8. added users into [all.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/all.yml)
+8. added users into [all.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/all.yml)
 9. Launched `pr011`
 10. User logins fail
-11. Added password hashes instead of plaintext passwords into [all.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/all.yml)
+11. Added password hashes instead of plaintext passwords into [all.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/all.yml)
 12. Added configuration for a public group
 13. Launched VM and ran tests: public share test fails
-14. Added all groups into public share: [samba_shares variable](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/file.yml)
+14. Added all groups into public share: [samba_shares variable](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/file.yml)
 15. Uncommented specific share tests
 16. Ran tests:
 
@@ -198,7 +198,7 @@ Running test /vagrant/test/pr011/samba.bats
 22 tests, 0 failures
 ```
 
-17. Added basic vsftpd configuration into [file.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/file.yml):
+17. Added basic vsftpd configuration into [file.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/file.yml):
 
 ```console
 vsftpd_anonymous_enable: false
@@ -262,7 +262,7 @@ Running test /vagrant/test/pr011/vsftp.bats
 17 tests, 10 failures
 ```
 
-19. Added extra permissions into [file.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/file.yml):
+19. Added extra permissions into [file.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/file.yml):
 
 ```console
 vsftpd_extra_permissions:

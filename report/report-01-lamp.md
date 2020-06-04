@@ -1,7 +1,7 @@
 # Enterprise Linux Lab Report: 01-lamp
 
 - Student name: Jens Van Liefferinge
-- Github repo: <https://github.com/HoGentTIN/elnx-1920-sme-JensVL>
+- Github repo: <https://github.com/JensVL/project-linux-ansible/tree/solution>
 
 Installing & configuring a LAMP stack on pu001.
 
@@ -72,15 +72,15 @@ Manual workaround for when the "MariaDB user should have write" test fails:
 1. Downloaded the [bertvv httpd](https://github.com/bertvv/ansible-role-httpd) into /ansible/roles
 2. Downloaded the [bertvv mariadb](https://github.com/bertvv/ansible-role-mariadb) into /ansible/roles
 3. Downloaded the [bertvv wordpress](https://github.com/bertvv/ansible-role-wordpress) into /ansible/roles
-4. Added roles into [site.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/site.yml)
+4. Added roles into [site.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/site.yml)
 5. Added `pu` group into `group_vars`
-6. Added configuration variables into [pu.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/pu.yml)
+6. Added configuration variables into [pu.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/pu.yml)
 7. Edited variables in test scripts
 8. `vagrant provision pu001`
 9. `vagrant ssh pu001`
 10. Created SSL certificate using [CentOS wiki](https://wiki.centos.org/HowTos/Https)
 11. Moved certificate to /ansible/files
-12. Added SSL variable configuration into [pu.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/pu.yml)
+12. Added SSL variable configuration into [pu.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/pu.yml)
 13. `vagrant provision`
 14. `vagrant ssh pu001`
 15. Ran tests using `sudo /vagrant/test/runbats.sh`

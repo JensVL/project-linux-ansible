@@ -1,7 +1,7 @@
 # Enterprise Linux Lab Report: 00-server-setup
 
 - Student name: Jens Van Liefferinge
-- Github repo: <https://github.com/HoGentTIN/elnx-1920-sme-JensVL>
+- Github repo: <https://github.com/JensVL/project-linux-ansible/tree/solution>
 
 Applying basic configuration to the pu001 server and testing it.
 
@@ -46,13 +46,13 @@ Applying basic configuration to the pu001 server and testing it.
 ## Procedure/Documentation
 
 1. Downloaded the [bertvv Ansible base role](https://github.com/bertvv/ansible-role-rh-base) into /ansible/roles
-2. Added role into [site.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/site.yml)
-3. Edited IP in [vagrant-hosts.yml](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/vagrant-hosts.yml) to `192.0.2.10`
+2. Added role into [site.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/site.yml)
+3. Edited IP in [vagrant-hosts.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/vagrant-hosts.yml) to `192.0.2.10`
 4. CentOS box not updated to VirtualBox Guest Additions 6.12, gave shared folders error: tried to fix using command line
 5. Rolled back VirtualBox version to 6.10
 6. Skipped MOTD test and changed username to `jens`
 7. Tested using `vagrant up pu001` -> works
-8. Added variables into [ansible/group_vars/all.yml](https://github.com/oGentTIN/elnx-1920-sme-JensVL/blob/solution/ansible/group_vars/all.yml)
+8. Added variables into [ansible/group_vars/all.yml](https://github.com/JensVL/project-linux-ansible/tree/solution/ansible/group_vars/all.yml)
 9. `vagrant provision pu001` gives following result:
 
     ```console

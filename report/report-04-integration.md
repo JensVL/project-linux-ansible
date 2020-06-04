@@ -47,7 +47,7 @@ DNS: 172.16.192.1,172.16.192.2
 
 1. Installed `vagrant-vytos` plugin
 2. Booted VM to test -> works
-3. Added NTP configuration into [router config](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/scripts/router-config.sh):
+3. Added NTP configuration into [router config](https://github.com/JensVL/project-linux-ansible/tree/solution/scripts/router-config.sh):
 
 ```shell
 set system time-zone Etc/GMT+1
@@ -99,7 +99,7 @@ set service dhcp
 set service dhcp-server shared-network-name avalon authoritative enable
 ```
 
-8. Added DHCP config into [router config](https://github.com/HoGentTIN/elnx-1920-sme-JensVL/blob/solution/scripts/router-config.sh):
+8. Added DHCP config into [router config](https://github.com/JensVL/project-linux-ansible/tree/solution/scripts/router-config.sh):
 
 ```shell
 set service dhcp-server shared-network-name avalon subnet 172.16.0.0/16 default-router 172.16.0.1
